@@ -1,0 +1,270 @@
+#include <stdio.h>
+#include <math.h>  // using math library as we will use some pre-defined functions
+
+float add(float a,float b);  // Writing function prototypes
+float sub(float a,float b);
+float mul(float a,float b);
+float div(float a,float b);
+float power(float a,float b);
+float root(float a);
+double sine(double a);
+double cosine(double a);
+double tangent(double a);
+double logn(double a);
+double logc(double a);
+
+int main()     //Main function begin
+{
+    int op;         //Declaring variables for calculations
+    float x,y,cal;
+    char rep;
+    double e,dob;
+
+        printf("\t\t--<<*  ASSALAM ALAIKUM USER  *>>--\n\n");
+
+    do  //using loop to repeat program until user's wish
+    {
+        printf("\nWhat do you want do Calculate??");     //prompt
+        printf("\n____________________________________");
+        printf("\n************************************");
+        printf("\n\nPress 1 for Addition");
+        printf("\nPress 2 for Subtraction");
+        printf("\nPress 3 for Multiplication");
+        printf("\nPress 4 for Division");
+        printf("\nPress 5 for Power");
+        printf("\nPress 6 for Square Root");
+        printf("\nPress 7 for Sine");
+        printf("\nPress 8 for Cosine");
+        printf("\nPress 9 for Tangent");
+        printf("\nPress 10 for Natural Logarithm");
+        printf("\nPress 11 for Common Logarithm");
+        printf("\n\nYour Choice: ");
+
+        scanf(" %d",&op);  //getting user's calculation choice
+
+        printf("____________________________________");
+        printf("\n************************************");
+
+          switch(op)    //Conditional statement to execute user's choice
+          {
+              case 1:  //Addition
+
+                  printf("\n\nEnter First Number: ");
+                  scanf(" %f",&x);
+                  printf("\nEnter Second Number: ");
+                  scanf(" %f",&y);
+
+                   cal=add(x,y);   //calling add function
+
+                   printf("\n\nThe Sum is: %.2f",cal);
+                   break;
+
+              case 2:  //Subtraction
+
+                  printf("\n\nEnter First Number: ");
+                  scanf(" %f",&x);
+                  printf("\nEnter Second Number: ");
+                  scanf(" %f",&y);
+
+                   cal=sub(x,y); //calling add function
+
+                   printf("\n\nThe Difference is: %.2f",cal);
+                  break;
+
+              case 3:  //Multiplication
+
+                  printf("\n\nEnter First Number: ");
+                  scanf(" %f",&x);
+                  printf("\nEnter Second Number: ");
+                  scanf(" %f",&y);
+
+                   cal=mul(x,y);   //calling mul function
+
+                   printf("\n\nThe Product is: %.2f",cal);
+                   break;
+
+              case 4:   //Division
+
+                  printf("\n\nEnter First Number: ");
+                  scanf(" %f",&x);
+                  printf("\nEnter Second Number: ");
+                  scanf(" %f",&y);
+
+                   cal=div(x,y);    //calling div function
+
+                   printf("\n\nThe Quotient is: %.2f",cal);
+                   break;
+
+              case 5:  //power function
+
+                  printf("\n\nEnter Base: ");
+                  scanf(" %f",&x);
+                  printf("\nEnter Power: ");
+                  scanf(" %f",&y);
+
+                   cal=power(x,y);  //calling power function
+
+                   printf("\n\nThe Exponential Value is: %.2f",cal);
+                    break;
+
+              case 6:  //taking square root
+
+                  printf("\n\nEnter the Number: ");
+                  scanf(" %f",&x);
+
+                   cal=root(x);  //calling root function
+
+                   printf("\n\nThe Square Root is: %.2f",cal);
+                    break;
+
+              case 7:   //Taking sine
+
+                  printf("\n\nEnter Angle in Radians: ");
+                  scanf(" %lf",&e);
+
+                   dob=sine(e);  //calling sine function
+
+                   printf("\n\nThe sine is: %.2lf",dob);
+                   break;
+
+              case 8:   //Taking Cosine
+
+                   printf("\n\nEnter Angle in Radians: ");
+                   scanf(" %lf",&e);
+
+                   dob=cosine(e);  //calling cosine function
+
+                   printf("\n\nThe cosine is: %.2lf",dob);
+                   break;
+
+              case 9:   //Taking tangent
+
+                  printf("\n\nEnter Angle in Radians: ");
+                  scanf(" %lf",&e);
+
+                   dob=tangent(e);  //calling tangent function
+
+                   printf("\n\nThe tangent is: %.2lf",dob);
+                    break;
+
+              case 10:   //Taking natural log
+
+                  printf("\n\nEnter a Natural Number: ");
+                  scanf(" %lf",&e);
+
+                   dob=logn(e);  //calling logn function
+
+                   printf("\n\nThe Natural Logarithm is: %.2lf",dob);
+                   break;
+
+              case 11:    //Taking common logarithm
+
+                  printf("\n\nEnter a Natural Number: ");
+                  scanf(" %lf",&e);
+
+                   dob=logc(e);   //calling logc function
+
+                   printf("\n\nThe Common Logarithm is: %.2lf",dob);
+                   break;
+
+              default:
+                  printf("\n\n\t....WRONG INPUT....!!!");   //in case of wrong input
+          }
+
+          printf("\n____________________________________");
+          printf("\n************************************");
+          printf("\n\nDo you want to do another Calculation (Y/N)?? ");  //Asking user to repeat the program
+          scanf(" %c",&rep);
+
+    }while(rep=='Y' || rep=='y');   //loop end
+
+     printf("\n\n     <**__THANK YOU FOR USING THE PROGRAM__**>");
+     printf("\n\n-------------------------------------------------\n\n");
+
+    return 0;
+} //main end
+
+//Defining Functions
+
+float add(float a,float b)
+{
+    return a+b;
+}
+
+float sub(float a,float b)
+{
+    return a-b;
+}
+
+float mul(float a,float b)
+{
+    return a*b;
+}
+
+float div(float a,float b)
+{
+    return a/b;
+}
+
+float power(float a,float b)
+{
+    float ans;
+
+     ans=pow(a,b);
+
+    return ans;
+}
+
+float root(float a)
+{
+    float ans;
+
+    ans=sqrt(a);
+
+    return ans;
+}
+
+double sine(double a)
+{
+    double ret;
+
+    ret=sin(a);
+
+    return ret;
+}
+
+double cosine(double a)
+{
+    double ret;
+
+    ret=cos(a);
+
+    return ret;
+}
+
+double tangent(double a)
+{
+    double ret;
+
+    ret=tan(a);
+
+    return ret;
+}
+
+double logn(double a)
+{
+    double ret;
+
+    ret=log(a);
+
+    return ret;
+}
+
+double logc(double a)
+{
+    double ret;
+
+    ret=log10(a);
+
+    return ret;
+}
